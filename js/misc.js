@@ -29,22 +29,24 @@ function pageNavigation() {
 
 //INPUT CHACKER
 function inputChecker() {
-    var firstinputs = $('.input, textarea').length;
+    var inputs_leng = $('.input, textarea').length,
+        submit = $('#submit'),
+        inputs = $('.input, textarea');
 
-    $('.input, textarea').change(function() {
+    inputs.change(function() {
         var itemcount = 0;
 
-        $('.input, textarea').each(function(i,input) {
+        inputs.each(function(i,input) {
 
             if(input.value.length > 0) {
                 itemcount++;
             }
         });
 
-        if(itemcount == firstinputs) {
-            $('#submit').removeClass('disabled').addClass('enabled');
+        if(itemcount == inputs_leng) {
+            submit.removeClass('disabled').addClass('enabled');
         } else {
-            $('#submit').removeClass('enabled').addClass('disabled');
+            submit.removeClass('enabled').addClass('disabled');
         }
     });
 }
