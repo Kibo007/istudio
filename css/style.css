@@ -93,19 +93,71 @@ body {
 .icon-email,
 .icon-telephone {
   background: url(../img/sprite.png) no-repeat;
-  height: 24px;
+  height: 27px;
   width: 25px;
   padding-left: 6px;
-  border-right: 1px solid #ccc; }
+  border-right: 1px solid #ccc;
+  margin-top: 2px; }
 
 .icon-person {
-  background-position: 4px 3px; }
+  background-position: 4px 4px; }
 
 .icon-email {
-  background-position: -23px 1px; }
+  background-position: -23px 3px; }
 
 .icon-telephone {
   background-position: -52px 2px; }
+
+.input-prepend.error .icon-person {
+  background-position: 4px -47px; }
+
+.input-prepend.error .icon-email {
+  background-position: -23px -47px; }
+
+.input-prepend.error .icon-telephone {
+  background-position: -52px -49px; }
+
+.input_error {
+  display: none; }
+
+.input_valid {
+  display: none; }
+
+.input-prepend.error .input_error,
+.input-prepend.valid .input_valid {
+  font-size: 13px;
+  color: white;
+  padding: 14px 15px;
+  position: relative;
+  margin-left: 13px;
+  display: inline-block;
+  line-height: 13px; }
+
+.input-prepend.error .input_error:before,
+.input-prepend.valid .input_valid:before {
+  position: absolute;
+  content: "";
+  left: -9px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; }
+
+.input-prepend.error .input_error.first,
+.input-prepend.valid .input_valid.first {
+  padding: 8px 15px; }
+
+.input-prepend.error .input_error {
+  background: #9e0202; }
+
+.input-prepend.error .input_error:before {
+  border-right: 10px solid #9e0202; }
+
+.input-prepend.valid .input_valid {
+  background: #66c598; }
+
+.input-prepend.valid .input_valid:before {
+  border-right: 10px solid #66c598; }
 
 /*****************************************************************************************************************
 ***************************************************              HEADER                  **************************
@@ -442,7 +494,8 @@ body {
 .wrap_form input {
   font-size: 18px;
   width: 100%;
-  border-left: none; }
+  border-left: none;
+  font-weight: 600; }
 
 .wrap_form textarea {
   font-size: 15px; }
@@ -451,7 +504,7 @@ body {
 .wrap_form textarea,
 .wrap_form select {
   color: #4a4d51;
-  padding: 7px 15px; }
+  padding: 9px 15px; }
 
 .wrap_form select {
   font-size: 13px;
@@ -490,11 +543,21 @@ body {
   width: 52%; }
 
 .wrap_form .input-prepend .add-on {
-  height: 26px;
+  height: 30px;
   background-color: white; }
 
 .wrap_form .input-prepend.small-prepend {
   width: 36%; }
+
+.input-prepend.error .input {
+  outline: #9e0202;
+  border: 2px solid #9e0202;
+  border-left: none; }
+
+.input-prepend.error .add-on {
+  outline: #9e0202;
+  border: 2px solid #9e0202 !important;
+  border-right: none !important; }
 
 /*****************************************************************************************************************
 ***************************************************            FOOTER & SECTION SIX                  **************************
@@ -615,7 +678,31 @@ body {
     margin-top: 25px; }
 
   .navbar .brand {
-    padding: 10px 18px; } }
+    padding: 10px 18px; }
+
+  .input-prepend.error .input_error,
+  .input-prepend.valid .input_valid {
+    display: block;
+    margin: 12px 0 0 0; }
+
+  .input-prepend.error .input_error:before,
+  .input-prepend.valid .input_valid:before {
+    top: -9px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: none;
+    left: auto; }
+
+  .input-prepend.error .input_error.first,
+  .input-prepend.valid .input_valid.first {
+    padding: 8px 28px 8px 15px;
+    width: 100%; }
+
+  .input-prepend.error .input_error:before {
+    border-bottom: 10px solid #9e0202; }
+
+  .input-prepend.valid .input_valid:before {
+    border-bottom: 10px solid #66c598; } }
 /*.................................................................................  max-width: 767px  */
 @media (max-width: 767px) {
   body {
