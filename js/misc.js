@@ -38,7 +38,7 @@ function inputChecker() {
         submit = $('#submit'),
         inputs = $('.input, textarea');
 
-    inputs.on('blur change', function() {
+    inputs.on('blur change input propertychange', function() {
         var itemcount = 0,
             el = $(this);
 
@@ -106,6 +106,10 @@ function inputValidator(input) {
     //INPUT NOT PASS VALIDATION ADD ERROR CLASS
     function error_class(el) {
         el.closest('.input-prepend').addClass('error');
+        
+        if ( el.attr('id') !== 'name' ) { 
+            el.closest('.input-prepend').removeClass('valid');
+        }
     }
 
     //VALIDATION PASS, ADD VALID FUNCTION
