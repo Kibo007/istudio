@@ -3,6 +3,11 @@ function init_istudio() {
     $(".selectpicker").select2(); 
     inputChecker();
     pageNavigation();
+
+    //REMOVE ALERT SUCCESS MESSAGE SENT 
+    $('.alert-success em').on('click', function() {
+        $(this).closest('p').remove();
+    }); 
 }
 
 // PAGE NAVIGATION
@@ -33,7 +38,7 @@ function inputChecker() {
         submit = $('#submit'),
         inputs = $('.input, textarea');
 
-    inputs.blur(function() {
+    inputs.on('blur change', function() {
         var itemcount = 0,
             el = $(this);
 
@@ -134,7 +139,6 @@ function inputValidator(input) {
     }
 
 }
-
 
 //ON DOCUMENT READY INIT
 $(document).ready(function() {

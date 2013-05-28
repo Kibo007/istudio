@@ -70,6 +70,11 @@
 
                 <div class="span10">
 
+                    <?php  
+                        // check for a successful form post  
+                        if (isset($_GET['s'])) echo "<p class=\"alert alert-success\">".$_GET['s']." <em>x</em></p>";  
+                    ?>  
+            
                     <h1>Placing content boxes on your grid</h1>
 
                     <p>Once you created your 970 grid, it's time to fill it with content boxes. When you're at the information arhitecture stage of the process you should already have an understanding of the content that will go on your website. The goal to wireframing an effective information arhitecture is focus on the placement, sizing and order of content, and not to focus on the look and feel. This is where content boxes come in handy.</p>
@@ -243,7 +248,7 @@
             <div class="row-fluid">
 
                 <div class="span7">
-                    <form class="well" id="contact_form">
+                    <form class="well" id="contact_form" method="POST" action="contact-form-submission.php">
                         <div class="offset1">
 
                             <label for="name">Name &amp; Surname</label>
@@ -290,6 +295,8 @@
                                 <button id="submit" type="submit" class="btn btn-large disabled">Send</button>
                             </div>
                         </div>
+                        <input type="hidden" name="save" value="contact">  
+
                     </form>
                 </div>
 

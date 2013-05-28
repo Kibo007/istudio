@@ -233,6 +233,13 @@ body {
   left: 28px;
   text-indent: -9999px; }
 
+.wrap_intro .alert {
+  padding-right: 17px; }
+
+.wrap_intro .alert em {
+  float: right;
+  cursor: pointer; }
+
 /*****************************************************************************************************************
 ***************************************************         SLIDER SECTION TWO           **************************
 ******************************************************************************************************************/
@@ -420,7 +427,7 @@ body {
   display: block; }
 
 .wrap_article .span1 .avatar_name:after {
-  background: url(../img/sprite.png) -78px -45px no-repeat;
+  background: url(../img/sprite.png?v=2) -78px -45px no-repeat;
   content: "";
   position: absolute;
   left: 11px;
@@ -448,7 +455,7 @@ body {
   color: #66c598; }
 
 .wrap_article .span11 .like_btn i {
-  background: url(../img/sprite.png) -86px -3px no-repeat;
+  background: url(../img/sprite.png?v=2) -86px -3px no-repeat;
   height: 13px;
   width: 37px;
   display: inline-block; }
@@ -504,7 +511,7 @@ body {
 .wrap_form textarea,
 .wrap_form select {
   color: #4a4d51;
-  padding: 9px 15px; }
+  padding: 9px 15px 9px 8px; }
 
 .wrap_form select {
   font-size: 13px;
